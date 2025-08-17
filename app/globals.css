@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -37,6 +38,8 @@ html,
 body,
 :root{
   height:100%;
+  font-family:"DM Sans",sans-serif;
+  scroll-behavior: smooth;
 }
 
 
@@ -124,7 +127,7 @@ body,
 
 .dark {
   --background:oklch(15.604% 0.01855 48.001);
-  --foreground:oklch(99.703% 0.00011 271.152);
+  --foreground:oklch(97.614% 0.00011 271.152);
   --card:oklch(0.205 0 0);
   --card-foreground:oklch(0.985 0 0);
   --popover:oklch(0.205 0 0);
@@ -165,3 +168,34 @@ body,
   }
 }
 
+.hover-animation > span{
+  @apply overflow-hidden block relative pointer-events-none;
+}
+.hover-animation > span > span {
+  @apply inline-block;
+}
+
+.hover-animation > span > span:nth-of-type(1){
+  @apply transition-all ease-in-out duration-300;
+}
+
+.hover-animation > span > span:nth-of-type(2){
+  @apply transition-all ease-in-out duration-300 delay-75;
+}
+
+
+.hover-animation > span > span:nth-of-type(3){
+  @apply transition-all ease-in-out duration-300 delay-150;
+}
+
+.hover-animation > span > span > span {
+  @apply block absolute top-0 left-0 transform translate-y-[200%];
+  content:attr(data-text);
+}
+.hover-animation:hover > span > span,
+.hover-animation:focus > span > span{
+  @apply transform translate-y-[-200%];
+}
+body::-webkit-scrollbar{
+  display:none;
+}

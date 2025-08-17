@@ -1,13 +1,13 @@
-import Footer from "./_components/footer";
 import {Heading} from "./_components/heading";
+import Hero from "./_components/hero";
 
 const LandingPage = () => {
     return (
        <div className="min-h-full flex flex-col">
-          <div className="flex flex-col items-center justify-center flex-1">
-             <Heading/>
-          </div>
-          <Footer/>
+          <Heading/>
+          <div className="flex flex-col items-center justify-center flex-1 px-3">
+            <Hero/>
+         </div>
        </div>
     );
 }

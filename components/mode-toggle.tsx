@@ -20,13 +20,13 @@ const ModeToggle = () => {
 
   return (
     <Button
-      variant="ghost"
-      className="relative overflow-hidden text-muted-foreground hover:text-primary active:text-primary focus:text-primary hover:bg-transparent dark:hover:bg-transparent"
+      variant="outline"
+      className="relative overflow-hidden text-muted-foreground hover:text-primary active:text-primary focus:text-primary rounded-full shadow-xs h-8"
       onClick={handleClick}
       disabled={isSwitching}
     >
-      <Sun className="size-5 scale-100 rotate-0 transition-all duration-300 dark:scale-0 dark:-rotate-90"/>
-      <Moon className="absolute size-5 scale-0 rotate-90 transition-all duration-300 dark:scale-100 dark:rotate-0" />
+      <Sun className="size-4 scale-100 rotate-0 transition-all duration-300 dark:scale-0 dark:-rotate-90" weight="bold"/>
+      <Moon className="absolute size-4 scale-0 rotate-90 transition-all duration-300 dark:scale-100 dark:rotate-0" weight="bold"/>
     </Button>
   );
 };
